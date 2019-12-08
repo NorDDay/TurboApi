@@ -28,7 +28,7 @@ namespace TurboApi.Controllers
 				throw new BadRequestException();
 			}
 
-			var currentUser = await db.Users.FirstOrDefaultAsync(p => p.Login == user.Login && p.Password == user.Password).ConfigureAwait(false);
+			var currentUser = await db.Users.FirstOrDefaultAsync(p => p.Login == user.Login && p.Password == user.Password.CreateMD5()).ConfigureAwait(false);
 			if (currentUser == null)
 			{
 				throw new NotAuthException();
@@ -36,8 +36,8 @@ namespace TurboApi.Controllers
 			return CreateAuthSid(currentUser);
 		}
 
-		[HttpPost("singin")]
-		public async Task<string> Singin([FromBody] User user)
+		[HttpPost("singup")]
+		public async Task<string> Singup([FromBody] User user)
 		{
 			var existUser = await db.Users.FirstOrDefaultAsync(p => p.Login == user.Login).ConfigureAwait(false);
 
@@ -46,6 +46,7 @@ namespace TurboApi.Controllers
 				throw new BadRequestException();
 			}
 
+			user.Password = user.Password.CreateMD5();
 			var currentUser = db.Users.Add(user);
 			await db.SaveChangesAsync().ConfigureAwait(false);
 

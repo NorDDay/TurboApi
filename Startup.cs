@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using TurboApi.DI;
 using TurboApi.Exceptions;
 using TurboApi.Services;
@@ -27,6 +29,7 @@ namespace TurboApi
 		{
 			services.AddHttpContextAccessor();
 			services.AddResponseCaching();
+			services.AddDirectoryBrowser();
 			services.AddMvc(
 				config => { config.Filters.Add(typeof(ExceptionHandler)); });
 
@@ -44,6 +47,7 @@ namespace TurboApi
 		{
 			if (env.IsDevelopment())
 				app.UseDeveloperExceptionPage();
+			
 			app.Use(async (context, next) =>
 			{
 				context.Response.GetTypedHeaders().CacheControl =
@@ -59,6 +63,19 @@ namespace TurboApi
 
 				await next().ConfigureAwait(false);
 			});
+
+			app.UseStaticFiles(new StaticFileOptions
+			{
+				FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "turbo.front")),
+				RequestPath = new PathString("")
+			});
+
+			app.UseDirectoryBrowser(new DirectoryBrowserOptions
+			{
+				FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "turbo.front")),
+				RequestPath = new PathString("")
+			});
+
 			app.UseCors("TurboPolicy");
 			app.UseMvc();
 		}
