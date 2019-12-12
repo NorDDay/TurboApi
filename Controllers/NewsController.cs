@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using TurboApi.Models;
 using TurboApi.Services;
+using TurboClient.Models;
 
 namespace TurboApi.Controllers
 {

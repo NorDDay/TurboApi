@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using TurboApi.Models;
 using TurboApi.Services;
+using TurboClient.Models;
 
 namespace TurboApi.Controllers
 {

@@ -1,4 +1,4 @@
-﻿namespace TurboApi.Models
+﻿namespace TurboClient.Models
 {
 	public class News
 	{

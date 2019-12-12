@@ -1,4 +1,4 @@
-﻿using TurboApi.Models;
+﻿using TurboClient.Models;
 
 namespace TurboApi.Services
 {

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using TurboApi.Exceptions;
 using TurboApi.Extensions;
-using TurboApi.Models;
+using TurboClient.Models;
 
 namespace TurboApi.Services
 {

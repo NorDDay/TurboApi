@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TurboApi.Exceptions;
 using TurboApi.Extensions;
-using TurboApi.Models;
 using TurboApi.Services;
+using TurboClient.Models;
 
 namespace TurboApi.Controllers
 {

@@ -1,0 +1,10 @@
+C:\Users\patanin.maxim\Desktop\git\TurboApi\TurboClient\obj\Debug\TurboClient.csprojAssemblyReference.cache
+C:\Users\patanin.maxim\Desktop\git\TurboApi\TurboClient\obj\Debug\TurboClient.csproj.CoreCompileInputs.cache
+C:\Users\patanin.maxim\Desktop\git\TurboApi\TurboClient\bin\Debug\TurboClient.dll.config
+C:\Users\patanin.maxim\Desktop\git\TurboApi\TurboClient\bin\Debug\TurboClient.dll
+C:\Users\patanin.maxim\Desktop\git\TurboApi\TurboClient\bin\Debug\TurboClient.pdb
+C:\Users\patanin.maxim\Desktop\git\TurboApi\TurboClient\bin\Debug\Newtonsoft.Json.dll
+C:\Users\patanin.maxim\Desktop\git\TurboApi\TurboClient\bin\Debug\Newtonsoft.Json.xml
+C:\Users\patanin.maxim\Desktop\git\TurboApi\TurboClient\obj\Debug\TurboClient.csproj.CopyComplete
+C:\Users\patanin.maxim\Desktop\git\TurboApi\TurboClient\obj\Debug\TurboClient.dll
+C:\Users\patanin.maxim\Desktop\git\TurboApi\TurboClient\obj\Debug\TurboClient.pdb
